@@ -1,0 +1,5 @@
+<%= form_tag sessions_path, method: :post, id: "form", class: "d-flex" do %>
+  <%= text_field_tag "user_name", "", class: "form-control me-2", placeholder: "Username" %>
+  <%= password_field_tag "password", "", class: "form-control me-2", placeholder: "Password" %>
+  <%= button_tag "Login/Register", type: "submit", class: "btn btn-outline-success me-3" %>
+<% end %>
