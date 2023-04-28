@@ -1,0 +1,10 @@
+p {
+  margin: 0;
+  &.title-video {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+  }
+}

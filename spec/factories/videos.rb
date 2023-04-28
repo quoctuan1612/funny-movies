@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :video do
     title {"abc"}
-    url {"url.com"}
+    video_id {"sadasd"}
     description {"description abc"}
     association :user, strategy: :build
   end

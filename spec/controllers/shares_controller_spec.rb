@@ -41,7 +41,7 @@ RSpec.describe SharesController do
 
       context "when video was shared" do
         it "return error" do
-          post :create, params: {url: video.url}
+          post :create, params: {url: "https://youtu.be/#{video.video_id}"}
     
           aggregate_failures do
             expect(flash[:danger]).to be_present

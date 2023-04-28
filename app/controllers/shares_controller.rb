@@ -2,7 +2,7 @@ class SharesController < ApplicationController
   before_action :authenticate, only: %i[new create]
 
   def create
-    video = Video.find_or_initialize_by(url: params[:url])
+    video = Video.find_or_initialize_by(video_id: video_id)
     
     if video.persisted?
       flash[:danger] = "Video was shared!"
@@ -28,7 +28,7 @@ class SharesController < ApplicationController
   private
   
   def save_video video, video_info
-    video.url = params[:url]
+    video.video_id = video_id
     video.title = video_info.title
     video.description = video_info.description
     video.user_id = session[:user_id]
@@ -47,6 +47,10 @@ class SharesController < ApplicationController
   end
 
   def video_id
-    params[:url]&.split("/")&.last
+    if params[:url]&.include?("=")
+      params[:url]&.split("=")&.last
+    else
+      params[:url]&.split("/")&.last
+    end
   end
 end

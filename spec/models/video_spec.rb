@@ -13,7 +13,7 @@ RSpec.describe Video, type: :model do
     let!(:video){FactoryBot.create :video}
   
     it { is_expected.to validate_presence_of(:title) }
-    it { is_expected.to validate_presence_of(:url) }
-    it { is_expected.to validate_uniqueness_of(:url) }
+    it { is_expected.to validate_presence_of(:video_id) }
+    it { is_expected.to validate_uniqueness_of(:video_id) }
   end
 end
