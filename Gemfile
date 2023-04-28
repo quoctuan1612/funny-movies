@@ -53,6 +53,9 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
 end
 
 group :development do
@@ -64,8 +67,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'pry-rails', '~> 0.3.4'
-  gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
 end
 
 group :test do
@@ -74,6 +75,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'shoulda-matchers'
+  gem "webmock", "~> 3.0"
 end
 
 gem "sassc-rails"
+gem 'mime-types', '~> 3.4', '>= 3.4.1'
+gem 'rest-client', '~> 2.1'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
